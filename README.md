@@ -1,6 +1,3 @@
-# Maybank stock for Forecasting and Risk Analysis
-Maybank stock price forecasting and financial risk analysis using Python, ARIMA and Monte Carlo Simulation.
-
 # Maybank Stock Price Forecasting & Risk Analysis
 
 **Python | Time Series Analysis | ARIMA | Financial Risk | Monte Carlo Simulation**
