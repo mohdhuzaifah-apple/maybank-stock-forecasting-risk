@@ -23,64 +23,6 @@ The project aims to:
 - **Environment:** Jupyter Notebook
 - **Techniques:** Exploratory Data Analysis, ARIMA Forecasting, Model Evaluation, Financial Risk Analysis, Monte Carlo Simulation
 
-## Key Findings
-
-### 1. Stock Price Forecasting
-
-An ARIMA(1,1,1) model was developed using historical Maybank closing prices. The dataset was divided chronologically into 90% training data and 10% testing data.
-
-The model was evaluated using Root Mean Squared Error (RMSE) and compared against a constant-price benchmark.
-
-| Model | RMSE |
-|---|---:|
-| ARIMA(1,1,1) | RM0.8620 |
-| Constant-Price Benchmark | RM0.8924 |
-
-**Result:** The ARIMA model achieved approximately **3.4% lower RMSE** than the benchmark.
-
-Although ARIMA performed slightly better, both approaches struggled to capture the sustained stock price decline during the testing period.
-
-### 2. Financial Risk Analysis
-
-Historical daily returns were analysed using adjusted closing prices.
-
-| Risk Measure | Result |
-|---|---:|
-| Annualised Volatility | 12.33% |
-| 95% Daily Value-at-Risk | 1.12% |
-| 95% Daily Conditional VaR | 1.73% |
-
-**Result:** Historical VaR indicates that losses exceeded approximately 1.12% on the worst 5% of trading days, while CVaR indicates an average loss of 1.73% within that group.
-
-These measures help quantify historical downside exposure.
-
-### 3. Future Price Forecasting
-
-The ARIMA model was retrained using all available historical closing-price observations to generate a forecast over the next 30 trading observations.
-
-| Forecast Measure | Result |
-|---|---:|
-| Last Closing Price | RM9.87 |
-| Day 30 ARIMA Forecast | RM9.89 |
-| Day 30 Lower Prediction Limit | RM9.28 |
-| Day 30 Upper Prediction Limit | RM10.54 |
-
-**Result:** The ARIMA central forecast remained relatively stable, while the 95% prediction interval widened over time, reflecting increasing forecast uncertainty.
-
-### 4. Monte Carlo Simulation
-
-A historical-bootstrap Monte Carlo simulation was conducted using **1,000 simulated price paths over 30 trading observations**.
-
-| Scenario | Simulated Ending Price |
-|---|---:|
-| 5th Percentile | RM9.32 |
-| Median | RM9.96 |
-| 95th Percentile | RM10.69 |
-
-**Result:** The simulations generated a range of potential future price outcomes, illustrating uncertainty and possible downside exposure.
-
-The simulation results represent statistical scenarios rather than guaranteed future stock prices.
-
 ## Methodology
 
 The project followed five main stages:
@@ -148,6 +90,64 @@ Shows the 30-observation ARIMA central forecast and its 95% prediction interval.
 5. Run the notebook cells in sequence.
 
 An internet connection is required to download historical market data through Yahoo Finance. Results may change if the downloaded data are updated or revised.
+
+## Key Findings
+
+### 1. Stock Price Forecasting
+
+An ARIMA(1,1,1) model was developed using historical Maybank closing prices. The dataset was divided chronologically into 90% training data and 10% testing data.
+
+The model was evaluated using Root Mean Squared Error (RMSE) and compared against a constant-price benchmark.
+
+| Model | RMSE |
+|---|---:|
+| ARIMA(1,1,1) | RM0.8620 |
+| Constant-Price Benchmark | RM0.8924 |
+
+**Result:** The ARIMA model achieved approximately **3.4% lower RMSE** than the benchmark.
+
+Although ARIMA performed slightly better, both approaches struggled to capture the sustained stock price decline during the testing period.
+
+### 2. Financial Risk Analysis
+
+Historical daily returns were analysed using adjusted closing prices.
+
+| Risk Measure | Result |
+|---|---:|
+| Annualised Volatility | 12.33% |
+| 95% Daily Value-at-Risk | 1.12% |
+| 95% Daily Conditional VaR | 1.73% |
+
+**Result:** Historical VaR indicates that losses exceeded approximately 1.12% on the worst 5% of trading days, while CVaR indicates an average loss of 1.73% within that group.
+
+These measures help quantify historical downside exposure.
+
+### 3. Future Price Forecasting
+
+The ARIMA model was retrained using all available historical closing-price observations to generate a forecast over the next 30 trading observations.
+
+| Forecast Measure | Result |
+|---|---:|
+| Last Closing Price | RM9.87 |
+| Day 30 ARIMA Forecast | RM9.89 |
+| Day 30 Lower Prediction Limit | RM9.28 |
+| Day 30 Upper Prediction Limit | RM10.54 |
+
+**Result:** The ARIMA central forecast remained relatively stable, while the 95% prediction interval widened over time, reflecting increasing forecast uncertainty.
+
+### 4. Monte Carlo Simulation
+
+A historical-bootstrap Monte Carlo simulation was conducted using **1,000 simulated price paths over 30 trading observations**.
+
+| Scenario | Simulated Ending Price |
+|---|---:|
+| 5th Percentile | RM9.32 |
+| Median | RM9.96 |
+| 95th Percentile | RM10.69 |
+
+**Result:** The simulations generated a range of potential future price outcomes, illustrating uncertainty and possible downside exposure.
+
+The simulation results represent statistical scenarios rather than guaranteed future stock prices.
 
 ## Conclusion
 
